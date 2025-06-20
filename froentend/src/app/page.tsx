@@ -4,7 +4,7 @@ import Leanding from "./leanding/page";
 
 export default function Home() {
   return (
-    <Box sx ={{ backgroundColor: "#000"  ,display: "flex"}}>
+    <Box>
       <Navbar />
       <Leanding />
 

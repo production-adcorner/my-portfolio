@@ -41,7 +41,7 @@ function LandingPage() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: "url(/video.mp4)",
+          // backgroundImage: "url(/video.mp4)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: 0.4,
@@ -59,7 +59,7 @@ function LandingPage() {
           minHeight: "100vh",
         }}
       >
-        <Navbar />
+      
 
         {/* Main Content */}
         <Box

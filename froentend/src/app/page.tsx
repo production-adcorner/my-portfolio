@@ -38,7 +38,7 @@ export default function Home() {
           zIndex: -1, // This places the video behind all other content
         }}
       >
-        <source src="/homm.mp4" type="video/mp4" />
+        <source src="/video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

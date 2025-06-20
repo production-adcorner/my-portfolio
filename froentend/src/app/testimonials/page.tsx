@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Button, Grid } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import TestimonialCard, { Testimonial } from '../Components/TestimonialCard'; // Import the card component
 
 // This would be your actual image component or an img tag
@@ -43,30 +43,30 @@ const ClientReviewsPage = () => {
       }}
     >
       {/* --- Top Section from previous example --- */}
-      <Grid container spacing={6} alignItems="center" sx={{ maxWidth: '1200px', mx: 'auto', mb: 8 }}>
-        <Grid item xs={12} md={6}>
+      <Box sx={{ display: 'flex', alignItems: 'center', maxWidth: '1200px', mx: 'auto', mb: 8 }}>
+        <Box flex={1}>
           <PlaceholderImage />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Typography variant="body2" sx={{ color: '#aaa', textTransform: 'uppercase' }}>● Reviews</Typography>
+        </Box>
+        <Box flex={1}>
+          <Typography variant="body2" sx={{ color: '#aaa', textTransform: 'uppercase' }}>Reviews</Typography>
           <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 'bold', my: 2 }}>Client Reviews</Typography>
           <Typography variant="body1" sx={{ color: '#ccc', mb: 4, maxWidth: '500px' }}>Real feedback from clients who trusted my design expertise to elevate their brands successfully.</Typography>
           <Box sx={{ display: 'flex', gap: 2 }}>
             <Button variant="contained" sx={{ bgcolor: 'white', color: 'black', '&:hover': { bgcolor: '#eee' } }}>Book a Free Call</Button>
             <Button variant="outlined" sx={{ borderColor: 'white', color: 'white', '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.1)' } }}>See Services</Button>
           </Box>
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
       
-      {/* --- NEW: Testimonial Cards Grid Section --- */}
+      {/* --- NEW: Testimonial Cards Flex Section --- */}
       <Box sx={{ maxWidth: '1200px', mx: 'auto' }}>
-        <Grid container spacing={4}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 4 }}>
           {sampleTestimonials.map((testimonial, index) => (
-            <Grid item key={index} xs={12} sm={6} md={4}>
+            <Box key={index} flex={1} sx={{ maxWidth: '400px' }}>
               <TestimonialCard {...testimonial} />
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Box>
 
     </Box>
@@ -77,53 +77,52 @@ export default ClientReviewsPage;
 
 
 
-import React from 'react';
-import { Box, Typography, Button, Grid } from '@mui/material';
-import TestimonialCard, { Testimonial } from '../Components/TestimonialCard';
-import KeyMetricsSection from '../Components/KeyMetricsSection'; // 1. Import the new component
+// import React from 'react';
+// import { Box, Typography, Button, Grid } from '@mui/material';
+// import KeyMetricsSection from '../Components/KeyMetricsSection'; // 1. Import the new component
 
-// (PlaceholderImage component and sampleTestimonials data remain the same as before)
-const PlaceholderImage = () => (
-    <Box sx={{ width: '100%', height: { xs: 250, md: 400 }, backgroundColor: '#333', borderRadius: 2 }} />
-);
-const sampleTestimonials: Testimonial[] = [
-  { photoUrl: '', name: 'June Lee', title: 'CEO of GreenRoots', review: 'Melly\'s strategic approach to design brought our brand vision to life. The packaging and brand elements she developed elevated our aesthetic and aligned perfectly with our sustainability values.', rating: 5 },
-  { photoUrl: '', name: 'Jona Carter', title: 'Founder of EcoLux', review: 'Every project Melly touches turns into a perfect blend of design and purpose. She crafted packaging that reflected our eco-friendly mission while making our products stand out on the shelves.', rating: 5 },
-  { photoUrl: '', name: 'Sofia Toms', title: 'Founder at GreenR Studios', review: 'Melly\'s designs speak for themselves—strategic and impactful. She took the time to understand our brand, delivering packaging that resonated with our target audience and our product\'s visibility.', rating: 5 },
-];
+// // (PlaceholderImage component and sampleTestimonials data remain the same as before)
+// const PlaceholderImage = () => (
+//     <Box sx={{ width: '100%', height: { xs: 250, md: 400 }, backgroundColor: '#333', borderRadius: 2 }} />
+// );
+// const sampleTestimonials: Testimonial[] = [
+//   { photoUrl: '', name: 'June Lee', title: 'CEO of GreenRoots', review: 'Melly\'s strategic approach to design brought our brand vision to life. The packaging and brand elements she developed elevated our aesthetic and aligned perfectly with our sustainability values.', rating: 5 },
+//   { photoUrl: '', name: 'Jona Carter', title: 'Founder of EcoLux', review: 'Every project Melly touches turns into a perfect blend of design and purpose. She crafted packaging that reflected our eco-friendly mission while making our products stand out on the shelves.', rating: 5 },
+//   { photoUrl: '', name: 'Sofia Toms', title: 'Founder at GreenR Studios', review: 'Melly\'s designs speak for themselves—strategic and impactful. She took the time to understand our brand, delivering packaging that resonated with our target audience and our product\'s visibility.', rating: 5 },
+// ];
 
 
-const ClientReviewsPage = () => {
-  return (
-    <Box sx={{ backgroundColor: 'black', color: 'white', p: { xs: 2, md: 6 } }}>
-      <Box sx={{ maxWidth: '1200px', mx: 'auto' }}>
+// const ClientReviewsPage = () => {
+//   return (
+//     <Box sx={{ backgroundColor: 'black', color: 'white', p: { xs: 2, md: 6 } }}>
+//       <Box sx={{ maxWidth: '1200px', mx: 'auto' }}>
         
-        {/* --- Top Section with Client Reviews Intro --- */}
-        <Grid container spacing={6} alignItems="center" sx={{ mb: 8 }}>
-          <Grid item xs={12} md={6}>
-            <PlaceholderImage />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>Client Reviews</Typography>
-            {/* ... other text and buttons ... */}
-          </Grid>
-        </Grid>
+//         {/* --- Top Section with Client Reviews Intro --- */}
+//         <Grid container spacing={6} alignItems="center" sx={{ mb: 8 }}>
+//           <Grid item xs={12} md={6}>
+//             <PlaceholderImage />
+//           </Grid>
+//           <Grid item xs={12} md={6}>
+//             <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>Client Reviews</Typography>
+//             {/* ... other text and buttons ... */}
+//           </Grid>
+//         </Grid>
         
-        {/* --- Testimonial Cards Grid Section --- */}
-        <Grid container spacing={4}>
-          {sampleTestimonials.map((testimonial, index) => (
-            <Grid item key={index} xs={12} sm={6} md={4}>
-              <TestimonialCard {...testimonial} />
-            </Grid>
-          ))}
-        </Grid>
+//         {/* --- Testimonial Cards Grid Section --- */}
+//         <Grid container spacing={4}>
+//           {sampleTestimonials.map((testimonial, index) => (
+//             <Grid item key={index} xs={12} sm={6} md={4}>
+//               <TestimonialCard {...testimonial} />
+//             </Grid>
+//           ))}
+//         </Grid>
 
-        {/* --- 2. ADD THE NEW KEY METRICS SECTION HERE --- */}
-        <KeyMetricsSection />
+//         {/* --- 2. ADD THE NEW KEY METRICS SECTION HERE --- */}
+//         <KeyMetricsSection />
 
-      </Box>
-    </Box>
-  );
-};
+//       </Box>
+//     </Box>
+//   );
+// };
 
-export default ClientReviewsPage;
+// export default ClientReviewsPage;

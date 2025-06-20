@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiBehance, FiDribbble, FiTwitter } from 'react-icons/fi';
+import {  FiDribbble, FiTwitter } from 'react-icons/fi';
 
 const Footer: React.FC = () => {
   return (
@@ -16,7 +16,8 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex justify-center items-center space-x-6 mb-8">
           <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-            <FiBehance size={24} />
+            <FiDribbble size={24} />
+           
           </a>
           <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
             <FiDribbble size={24} />

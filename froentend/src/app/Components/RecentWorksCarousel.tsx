@@ -1,5 +1,5 @@
 'use client';
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Divider, Typography } from "@mui/material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ProjectCard from "./ProjectCard"; // We will reuse the ProjectCard component
 

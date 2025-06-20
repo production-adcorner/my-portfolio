@@ -1,6 +1,6 @@
-import { Box, Button, Chip, Grid, Typography } from "@mui/material";
+import { Box, Button, Chip, Typography } from "@mui/material";
 import Navbar from "../Components/Navbar";
-import ServiceCard from "../Components/ServiceCard";
+import ServiceCard from "../Components/ServiceCard2";
 import StyleIcon from '@mui/icons-material/Style';
 import BrushIcon from '@mui/icons-material/Brush';
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
@@ -72,13 +72,13 @@ export default function ServicesPage() {
         </Box>
 
         {/* Middle Section: 2x2 Services Grid */}
-        <Grid container spacing={3} sx={{ mb: 6 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: 2, mb: 6 }}>
           {services.map(service => (
-            <Grid item xs={12} sm={6} key={service.title}>
+            <Box key={service.title} sx={{ flex: '1 1 45%', p: 2 }}>
               <ServiceCard icon={service.icon} title={service.title} description={service.description} />
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
 
         {/* Bottom Section: More Skills */}
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 1.5 }}>

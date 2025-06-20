@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid, Paper } from '@mui/material';
+import { Box, Typography, Paper } from '@mui/material';
 
 // A small component for each individual metric
 const MetricItem = ({ value, label }: { value: string; label: string }) => (
@@ -22,19 +22,14 @@ const KeyMetricsSection = () => {
         borderRadius: 4,
         p: { xs: 4, md: 5 }, // Responsive padding
         mt: 8, // Margin top to space it from the testimonials above
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
       }}
     >
-      <Grid container spacing={4}>
-        <Grid item xs={12} sm={4}>
-          <MetricItem value="180+" label="design projects completed." />
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <MetricItem value="96%" label="Client satisfaction rate." />
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <MetricItem value="15+" label="Years of experience" />
-        </Grid>
-      </Grid>
+      <MetricItem value="180+" label="design projects completed." />
+      <MetricItem value="96%" label="Client satisfaction rate." />
+      <MetricItem value="15+" label="Years of experience" />
     </Paper>
   );
 };

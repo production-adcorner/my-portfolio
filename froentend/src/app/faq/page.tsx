@@ -1,26 +1,23 @@
-'use client'; // This directive is needed for components with interactivity (useState)
+'use client';
 
 import React from 'react';
 import {
   Box,
   Typography,
-  Grid,
   Accordion,
   AccordionSummary,
   AccordionDetails,
   Button,
   Chip
 } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add'; // The '+' icon for the accordion
+import AddIcon from '@mui/icons-material/Add';
 
-// Define the structure for our FAQ items
 interface FaqItem {
   id: string;
   question: string;
   answer: string;
 }
 
-// Data for the FAQ section. You would likely fetch this from a CMS.
 const faqData: FaqItem[] = [
   {
     id: 'panel1',
@@ -52,12 +49,9 @@ const faqData: FaqItem[] = [
     question: 'What industries do you work with?',
     answer: 'I have experience across a wide range of industries, including tech, e-commerce, wellness, and food & beverage. I am always excited to learn about new sectors.',
   },
-  // Add other questions here
 ];
 
 const FaqPage = () => {
-  // State to manage which accordion panel is currently open
-  // Set the first panel to be open by default to match the screenshot
   const [expanded, setExpanded] = React.useState<string | false>('panel1');
 
   const handleChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
@@ -66,47 +60,45 @@ const FaqPage = () => {
 
   return (
     <Box sx={{ backgroundColor: 'black', color: 'white', minHeight: '100vh', p: { xs: 2, md: 6 } }}>
-      <Grid container spacing={{ xs: 4, md: 8 }} sx={{ maxWidth: '1300px', mx: 'auto' }}>
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, maxWidth: '1300px', mx: 'auto' }}>
         
         {/* Left Column */}
-        <Grid item xs={12} md={5}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-            <Typography variant="body2" sx={{ color: '#aaa' }}>● FAQ'S</Typography>
-            <Typography variant="h2" component="h1" sx={{ fontWeight: 'bold', my: 2 }}>
-              Answers
-            </Typography>
-            <Typography variant="body1" sx={{ color: '#ccc', mb: 4 }}>
-              Find answers to common questions about my design process, services etc...
-            </Typography>
-            
-            {/* Image Placeholder */}
-            <Box
-              sx={{
-                width: '100%',
-                height: { xs: 200, md: 300 },
-                backgroundColor: '#e0e0e0', // Placeholder for the gray image
-                borderRadius: 4,
-                mb: 3
-              }}
-            />
+        <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <Typography variant="body2" sx={{ color: '#aaa' }}>● FAQ'S</Typography>
+          <Typography variant="h2" component="h1" sx={{ fontWeight: 'bold', my: 2 }}>
+            Answers
+          </Typography>
+          <Typography variant="body1" sx={{ color: '#ccc', mb: 4 }}>
+            Find answers to common questions about my design process, services etc...
+          </Typography>
+          
+          {/* Image Placeholder */}
+          <Box
+            sx={{
+              width: '100%',
+              height: { xs: 200, md: 300 },
+              backgroundColor: '#e0e0e0',
+              borderRadius: 4,
+              mb: 3
+            }}
+          />
 
-            {/* Tags */}
-            <Box sx={{ display: 'flex', gap: 1, mb: 4 }}>
-                <Chip label="Product Design" variant="outlined" sx={{ color: '#ccc', borderColor: '#555' }} />
-                <Chip label="Brand Identity Design" variant="outlined" sx={{ color: '#ccc', borderColor: '#555' }} />
-                <Chip label="Branding" variant="outlined" sx={{ color: '#ccc', borderColor: '#555' }} />
-            </Box>
-
-            <Box sx={{ mt: 'auto' }}>
-                 <Button variant="outlined" sx={{ borderColor: 'white', color: 'white' }}>
-                    Book a Free Call
-                 </Button>
-            </Box>
+          {/* Tags */}
+          <Box sx={{ display: 'flex', gap: 1, mb: 4 }}>
+              <Chip label="Product Design" variant="outlined" sx={{ color: '#ccc', borderColor: '#555' }} />
+              <Chip label="Brand Identity Design" variant="outlined" sx={{ color: '#ccc', borderColor: '#555' }} />
+              <Chip label="Branding" variant="outlined" sx={{ color: '#ccc', borderColor: '#555' }} />
           </Box>
-        </Grid>
+
+          <Box sx={{ mt: 'auto' }}>
+               <Button variant="outlined" sx={{ borderColor: 'white', color: 'white' }}>
+                  Book a Free Call
+               </Button>
+          </Box>
+        </Box>
 
         {/* Right Column (Accordion) */}
-        <Grid item xs={12} md={7}>
+        <Box sx={{ flex: 1 }}>
           {faqData.map((item) => (
             <Accordion
               key={item.id}
@@ -116,10 +108,10 @@ const FaqPage = () => {
               sx={{
                 backgroundColor: '#1c1c1c',
                 color: 'white',
-                borderRadius: '12px !important', // Force border radius
+                borderRadius: '12px !important',
                 mb: 1.5,
                 '&:before': {
-                  display: 'none', // Remove the default top border
+                  display: 'none',
                 },
               }}
             >
@@ -128,7 +120,6 @@ const FaqPage = () => {
                 aria-controls={`${item.id}-content`}
                 id={`${item.id}-header`}
                 sx={{
-                    // When the accordion is open, the icon should change. MUI handles this automatically, but you could add a rotation style.
                     '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
                         transform: 'rotate(45deg)',
                     },
@@ -143,8 +134,8 @@ const FaqPage = () => {
               </AccordionDetails>
             </Accordion>
           ))}
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
     </Box>
   );
 };

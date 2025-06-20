@@ -1,69 +1,73 @@
-// components/ProjectCard.jsx
 'use client';
 import React from 'react';
-import { Box, Button, Card, CardMedia, CardContent, Typography } from '@mui/material';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { Box, Button, Typography } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
+// Define the properties the component will accept
 interface ProjectCardProps {
   imageUrl: string;
-  altText: string;
-  caseStudyLink?: string;
+  title: string;
+  showCaseStudy?: boolean; // Optional prop to show the button
 }
 
-function ProjectCard({ imageUrl, altText, caseStudyLink = '#' }: ProjectCardProps) {
+export default function ProjectCard({ imageUrl, title, showCaseStudy = false }: ProjectCardProps) {
   return (
-    <Card
+    <Box
       sx={{
-        backgroundColor: '#1a1a1a', 
-        color: 'white',
-        borderRadius: 2,
-        overflow: 'hidden',
         position: 'relative',
-        cursor: 'pointer',
-        '&:hover .MuiButton-root': {
+        borderRadius: '8px',
+        overflow: 'hidden',
+        height: '100%',
+        '&:hover .case-study-button': {
           opacity: 1,
           transform: 'translateY(0)',
         },
+        '& img': {
+          transition: 'transform 0.3s ease-in-out',
+        },
+        '&:hover img': {
+          transform: 'scale(1.05)',
+        },
       }}
     >
-      <CardMedia
-        component="img"
-        image={imageUrl}
-        alt={altText}
-        sx={{
+      <img
+        src={imageUrl}
+        alt={title}
+        style={{
           width: '100%',
-          height: 300, // Adjust height as needed
+          height: '100%',
           objectFit: 'cover',
-          filter: 'grayscale(100%)', // Apply grayscale to match the screenshots
+          display: 'block',
         }}
       />
-      <CardContent sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, p: 2 }}>
+      {showCaseStudy && (
         <Button
-          variant="contained"
-          endIcon={<OpenInNewIcon />}
-          href={caseStudyLink}
-          target="_blank"
+          className="case-study-button"
+          href="#"
+          endIcon={<ArrowForwardIcon />}
           sx={{
-            bgcolor: 'rgba(255, 255, 255, 0.2)', // Semi-transparent white
-            color: 'white',
-            fontWeight: 600,
-            px: 3,
-            py: 1,
-            borderRadius: 2,
-            opacity: 0, // Hidden by default
-            transform: 'translateY(20px)', // Starts slightly below
+            position: 'absolute',
+            bottom: '16px',
+            left: '16px',
+            right: '16px',
+            py: 1.5,
+            backgroundColor: 'rgba(211, 211, 211, 0.8)', // Light grey with opacity
+            backdropFilter: 'blur(5px)',
+            color: '#000',
+            fontWeight: '600',
+            textTransform: 'none',
+            borderRadius: '6px',
+            opacity: 0,
+            transform: 'translateY(20px)',
             transition: 'opacity 0.3s, transform 0.3s',
-            backdropFilter: 'blur(5px)', // Blur effect for the button background
             '&:hover': {
-              bgcolor: 'rgba(255, 255, 255, 0.3)',
+              backgroundColor: 'rgba(255, 255, 255, 0.9)',
             },
           }}
         >
           View Casestudy
         </Button>
-      </CardContent>
-    </Card>
+      )}
+    </Box>
   );
 }
-
-export default ProjectCard;

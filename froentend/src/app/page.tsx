@@ -1,5 +1,6 @@
 import { Box, Button, Chip, Typography } from "@mui/material";
 import Navbar from "./Components/Navbar";
+import ServicesPage from "./projects/page";
 
 // A simple component for the client logos at the bottom
 const ClientLogo = ({ name }: { name: string }) => (
@@ -120,6 +121,7 @@ export default function Home() {
          <Button variant="contained" sx={{ textTransform: 'none', backgroundColor: '#fff', color: '#000', '&:hover': { backgroundColor: '#e0e0e0' }}}>Made in Framer</Button>
       </Box>
 
+        <ServicesPage/>
     </Box>
   );
 }

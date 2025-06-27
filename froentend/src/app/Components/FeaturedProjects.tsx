@@ -82,7 +82,7 @@ export default function FeaturedProjects() {
         {/* This button links to your full projects page */}
         <Button
           variant="contained"
-          href="/projects"
+          href="/Projects"
           sx={{
             py: { xs: 1, md: 1.5 }, px: { xs: 3, md: 4 }, borderRadius: '25px', textTransform: 'none', fontSize: { xs: '0.9rem', md: '1rem' },
             backgroundColor: '#fff', color: '#000', '&:hover': { backgroundColor: '#e0e0e0' }

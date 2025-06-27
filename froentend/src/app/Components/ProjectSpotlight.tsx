@@ -4,14 +4,14 @@ import { Box, Chip, Container, Divider, Grid, Typography } from '@mui/material';
 
 // --- Data for the component, easy to edit here ---
 const skills = [
-  'Product Design', 'Brand Identity Design', 'UX Design',
-  'Branding', 'Packaging Design', 'Figma', 'Photoshop'
+  'Graphic Design', 'Logo Design', 'Illustration',
+  'Branding', 'UI/UX', 'Adobe Creative Suite'
 ];
 
 const experience = [
-  { role: 'Freelance', company: 'GreenLeaf Co', period: 'Currently' },
-  { role: 'Brand Designer', company: 'UrbanFit Studio', period: '2023-24' },
-  { role: 'Package Designer', company: 'GreenK Studio', period: '2020-22' },
+  { role: 'Lead Graphic Designer', company: 'Creative Minds', period: 'Currently' },
+  { role: 'Graphic Designer', company: 'DesignHub', period: '2022-24' },
+  { role: 'Junior Designer', company: 'PixelPerfect', period: '2020-22' },
 ];
 
 const ExperienceRow = ({ role, company, period }: { role: string, company: string, period: string }) => (
@@ -23,7 +23,7 @@ const ExperienceRow = ({ role, company, period }: { role: string, company: strin
 );
 
 
-export default function MeetMeily() {
+export default function MeetVijay() {
   return (
     <Box sx={{ backgroundColor: '#000', color: '#fff', py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
@@ -33,10 +33,10 @@ export default function MeetMeily() {
           <Box sx={{ flex: '1', width: { xs: '100%', md: 'auto' } }}>
             <Box>
               <Typography variant="h2" sx={{ fontWeight: 'bold', fontSize: { xs: '3rem', md: '5rem' } }}>
-                Meet Meily
+                Meet Vijay Bhadani
               </Typography>
               <Typography sx={{ fontSize: '1.1rem', opacity: 0.8, mt: 2, maxWidth: '600px', lineHeight: 1.7 }}>
-                I'm Meily, a passionate Brand Identity & Package Designer based in Tokyo. I specialize in crafting bold visual identities and packaging that captivate and inspire, blending creativity with strategy to elevate brands.
+                I'm Vijay Bhadani, a passionate Graphic Designer. I specialize in creating visually stunning and effective designs that communicate brand messages and captivate audiences. My work combines artistic flair with strategic thinking to deliver impactful results.
               </Typography>
 
               <Divider sx={{ my: 4, bgcolor: 'rgba(255, 255, 255, 0.2)' }} />
@@ -77,13 +77,13 @@ export default function MeetMeily() {
               overflow: 'hidden'
             }}>
               <img
-                // IMPORTANT: Replace this with your actual image URL
-                src="https://framerusercontent.com/images/roWFLkzHAotwSx5UxGPxpxMeA.jpg?scale-down-to=1024"
-                alt="Portrait of Meily"
+                src="https://framerusercontent.com/images/GTWhJyJde9nAeuMXqgYJh6jQhrU.jpg?scale-down-to=1024"
+                alt="Portrait of Vijay Bhadani"
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
+                  transform: 'scaleX(-1)'
                 }}
               />
             </Box>

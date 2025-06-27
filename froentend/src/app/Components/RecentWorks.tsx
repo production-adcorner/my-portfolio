@@ -8,7 +8,7 @@ import { Box, Button, Container, IconButton, Typography } from '@mui/material';
 import { FiArrowDown, FiArrowLeft, FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
 
 // The new list of image URLs you provided.
-const works = [
+const originalWorks = [
   { imageUrl: 'https://framerusercontent.com/images/bed888CTflXNK3KFX1R7VhRMtE.png?scale-down-to=1024' },
   { imageUrl: 'https://framerusercontent.com/images/JGI1jOpxUUfW0IRfPmx7eMGhc.png?scale-down-to=1024' },
   { imageUrl: 'https://framerusercontent.com/images/fsFDlU7CKq0E96MXMN9fUXrNw.png?scale-down-to=512' },
@@ -17,15 +17,38 @@ const works = [
   { imageUrl: 'https://framerusercontent.com/images/GkhJfmw17Q5eehve51WR25Ijjnk.png' }, // Example extra image
 ];
 
-export default function RecentWorks() { 
+// Duplicate the array to create a seamless loop effect
+const works = [...originalWorks, ...originalWorks, ...originalWorks];
+
+export default function RecentWorks() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      const scrollAmount = current.clientWidth * 0.8; // Scroll by 80% of the container width
-      current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
+      const itemWidth = current.scrollWidth / works.length; // Approximate width of one item including gap
+      const originalContentWidth = originalWorks.length * itemWidth; // Total width of the original content
+
+      let newScrollLeft = current.scrollLeft;
+
+      if (direction === 'right') {
+        newScrollLeft += current.clientWidth * 0.8; // Scroll by 80% of the container width
+        // If we scroll past the first set of original content, jump back to the start of the second set
+        if (newScrollLeft >= originalContentWidth * 2) {
+          current.scrollLeft = originalContentWidth; // Jump to the start of the second set
+          newScrollLeft = originalContentWidth + (current.clientWidth * 0.8); // Continue scrolling from there
+        }
+      } else {
+        newScrollLeft -= current.clientWidth * 0.8; // Scroll by 80% of the container width
+        // If we scroll before the second set of original content, jump back to the end of the second set
+        if (newScrollLeft <= originalContentWidth) {
+          current.scrollLeft = originalContentWidth * 2; // Jump to the start of the third set
+          newScrollLeft = (originalContentWidth * 2) - (current.clientWidth * 0.8); // Continue scrolling from there
+        }
+      }
+
+      current.scrollTo({
+        left: newScrollLeft,
         behavior: 'smooth',
       });
     }
@@ -37,20 +60,9 @@ export default function RecentWorks() {
         
         {/* --- Header Section --- */}
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <Typography variant="h4" sx={{ fontWeight: 'medium' }}>
-              Recent Works
-            </Typography>
-            <FiArrowDown size={24} style={{ opacity: 0.5 }} />
-          </Box>
-          <Box sx={{ display: 'flex', gap: 1 }}>
-            <IconButton onClick={() => scroll('left')} sx={{ color: 'white', border: '1px solid rgba(255,255,255,0.2)'}}>
-              <FiArrowLeft />
-            </IconButton>
-            <IconButton onClick={() => scroll('right')} sx={{ color: 'white', border: '1px solid rgba(255,255,255,0.2)'}}>
-              <FiArrowRight />
-            </IconButton>
-          </Box>
+          <Typography variant="h4" sx={{ fontWeight: 'medium' }}>
+            Recent Works
+          </Typography>
         </Box>
 
         <Box sx={{ position: 'relative' }}>
@@ -78,6 +90,15 @@ export default function RecentWorks() {
                   aspectRatio: '3 / 4', // Gives the card a consistent shape
                   borderRadius: '12px',
                   overflow: 'hidden',
+                  // Hover effects for image
+                  '& img': {
+                    transition: 'transform 0.3s ease-in-out, filter 0.3s ease-in-out',
+                    filter: 'grayscale(100%)',
+                  },
+                  '&:hover img': {
+                    transform: 'scale(1.05)',
+                    filter: 'grayscale(0%)',
+                  },
                 }}
               >
                 <img
@@ -85,30 +106,20 @@ export default function RecentWorks() {
                   alt={`Recent Work ${index + 1}`}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
-                <Button
-                  endIcon={<FiArrowUpRight />}
-                  sx={{
-                    position: 'absolute',
-                    bottom: '16px',
-                    left: '16px',
-                    right: '16px',
-                    py: 1,
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    color: 'white',
-                    textTransform: 'none',
-                    borderRadius: '999px',
-                    transition: 'background-color 0.3s ease',
-                    '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.25)',
-                    },
-                  }}
-                >
-                  View Casestudy
-                </Button>
               </Box>
             ))}
+          </Box>
+        </Box>
+
+        {/* Navigation buttons at the bottom right */}
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 4, pr: 2 }}>
+          <Box sx={{ display: 'flex', gap: 1 }}>
+            <IconButton onClick={() => scroll('left')} sx={{ color: 'white', border: '1px solid rgba(255,255,255,0.2)'}}>
+              <FiArrowRight style={{ transform: 'rotate(180deg)' }} />
+            </IconButton>
+            <IconButton onClick={() => scroll('right')} sx={{ color: 'white', border: '1px solid rgba(255,255,255,0.2)'}}>
+              <FiArrowRight />
+            </IconButton>
           </Box>
         </Box>
       </Container>

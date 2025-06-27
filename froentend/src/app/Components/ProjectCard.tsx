@@ -23,10 +23,12 @@ export default function ProjectCard({ imageUrl, title, showCaseStudy = false }: 
           transform: 'translateY(0)',
         },
         '& img': {
-          transition: 'transform 0.3s ease-in-out',
+          transition: 'transform 0.3s ease-in-out, filter 0.3s ease-in-out',
+          filter: 'grayscale(100%)',
         },
         '&:hover img': {
           transform: 'scale(1.05)',
+          filter: 'grayscale(0%)',
         },
       }}
     >

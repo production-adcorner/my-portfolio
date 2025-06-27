@@ -20,11 +20,15 @@ export default function Home() {
         <HeroSection />
         <ClientLogos />
       </BackgroundVideo>
-      <FeaturedProjects />
+      <div id="featured-projects">
+        <FeaturedProjects />
+      </div>
       <ProjectSpotlight />
       <RecentWorks />
       <DesignProcess />
-      <DesignServices />
+      <div id="design-services">
+        <DesignServices />
+      </div>
       <ClientReviews />
       <FaqSection />
       <CtaSection />      

@@ -16,6 +16,7 @@
     "@mui/system": "^7.1.1",
     "@mui/types": "^7.4.3",
     "@types/react-scroll": "^1.8.10",
+    "framer-motion": "^12.19.1",
     "next": "15.3.3",
     "nextjs": "^0.0.3",
     "react": "^19.0.0",
@@ -24,11 +25,9 @@
     "react-scroll": "^1.9.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "tailwindcss": "^4",
     "typescript": "^5"
   },
   "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",

@@ -61,10 +61,10 @@ export default function CtaSection() {
           variant="h2"
           sx={{
             fontWeight: 'bold',
-            fontSize: { xs: '2.5rem', md: '3.5rem' },
+            fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' },
             maxWidth: '700px',
             mx: 'auto',
-            mb: 4,
+            mb: { xs: 3, md: 4 },
           }}
         >
           Curious about what we can create together? Let’s bring something extraordinary to life!
@@ -79,19 +79,13 @@ export default function CtaSection() {
                 color: '#000',
                 '&:hover': { bgcolor: '#eee' },
                 borderRadius: '99px',
-                px: 3,
-                py: 1.5,
-                fontSize: '1.1rem',
+                px: { xs: 2, md: 3 },
+                py: { xs: 1, md: 1.5 },
+                fontSize: { xs: '0.9rem', md: '1.1rem' },
               }}
             >
               Book a Free Call
             </Button>
-
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 8 }}>
-          <IconButton href="#" icon={<DesignServicesIcon />} />
-          <IconButton href="#" icon={<FiTwitter />} />
-          <IconButton href="#" icon={<FiDribbble />} />
-        </Box>
       </Container>
       
       {/* --- Footer Text --- */}
@@ -101,19 +95,19 @@ export default function CtaSection() {
           bottom: 0,
           left: 0,
           right: 0,
-          p: 3,
+          p: { xs: 2, md: 3 },
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           flexDirection: { xs: 'column', sm: 'row' },
-          gap: 2,
+          gap: { xs: 1, md: 2 },
           color: 'rgba(255, 255, 255, 0.5)',
           zIndex: 1,
         }}
       >
-        <Typography variant="body2">Peoduction.adcorner@gmail.com</Typography>
-        <Typography variant="body2">Made By Mukund Hirpara</Typography>
-        <Typography variant="body2">All rights reserved, ©{currentYear}</Typography>
+        <Typography variant="body2" sx={{ fontSize: { xs: '0.75rem', md: '0.875rem' } }}>Peoduction.adcorner@gmail.com</Typography>
+        <Typography variant="body2" sx={{ fontSize: { xs: '0.75rem', md: '0.875rem' } }}>Made By Mukund Hirpara</Typography>
+        <Typography variant="body2" sx={{ fontSize: { xs: '0.75rem', md: '0.875rem' } }}>All rights reserved, ©{currentYear}</Typography>
       </Box>
     </Box>
   );
@@ -126,7 +120,7 @@ const IconButton = ({ href, icon }: { href: string; icon: React.ReactElement }) 
       sx={{
         border: '1px solid rgba(255,255,255,0.2)',
         borderRadius: '50%',
-        p: 1.5,
+        p: { xs: 1, md: 1.5 },
         color: 'rgba(255,255,255,0.7)',
         transition: 'all 0.3s ease',
         '&:hover': {

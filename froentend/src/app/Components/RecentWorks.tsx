@@ -60,7 +60,7 @@ export default function RecentWorks() {
         
         {/* --- Header Section --- */}
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
-          <Typography variant="h4" sx={{ fontWeight: 'medium' }}>
+          <Typography variant="h4" sx={{ fontWeight: 'medium', fontSize: { xs: '2rem', md: '2.5rem', lg: '3rem' } }}>
             Recent Works
           </Typography>
         </Box>
@@ -72,7 +72,7 @@ export default function RecentWorks() {
             sx={{
               display: 'flex',
               overflowX: 'auto',
-              gap: 3,
+              gap: { xs: 2, md: 3 },
               py: 2,
               scrollBehavior: 'smooth',
               '&::-webkit-scrollbar': {
@@ -86,7 +86,7 @@ export default function RecentWorks() {
                 sx={{
                   position: 'relative',
                   flex: '0 0 auto', // Prevents items from shrinking
-                  width: { xs: '80%', sm: '40%', md: '30%', lg: '24%' },
+                  width: { xs: '80%', sm: '45%', md: '30%', lg: '24%' },
                   aspectRatio: '3 / 4', // Gives the card a consistent shape
                   borderRadius: '12px',
                   overflow: 'hidden',
@@ -112,13 +112,13 @@ export default function RecentWorks() {
         </Box>
 
         {/* Navigation buttons at the bottom right */}
-        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 4, pr: 2 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: { xs: 2, md: 4 }, pr: { xs: 0, md: 2 } }}>
           <Box sx={{ display: 'flex', gap: 1 }}>
-            <IconButton onClick={() => scroll('left')} sx={{ color: 'white', border: '1px solid rgba(255,255,255,0.2)'}}>
-              <FiArrowRight style={{ transform: 'rotate(180deg)' }} />
+            <IconButton onClick={() => scroll('left')} sx={{ color: 'white', border: '1px solid rgba(255,255,255,0.2)', p: { xs: 1, md: 1.5 } }}>
+              <FiArrowRight style={{ transform: 'rotate(180deg)', fontSize: '1.5rem' }} />
             </IconButton>
-            <IconButton onClick={() => scroll('right')} sx={{ color: 'white', border: '1px solid rgba(255,255,255,0.2)'}}>
-              <FiArrowRight />
+            <IconButton onClick={() => scroll('right')} sx={{ color: 'white', border: '1px solid rgba(255,255,255,0.2)', p: { xs: 1, md: 1.5 } }}>
+              <FiArrowRight style={{ fontSize: '1.5rem' }} />
             </IconButton>
           </Box>
         </Box>

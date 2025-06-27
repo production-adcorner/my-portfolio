@@ -49,33 +49,33 @@ export default function ClientReviews() {
     <Box sx={{ backgroundColor: '#000', color: '#fff', py: { xs: 8, md: 12 }, overflow: 'hidden' }}>
       <Container maxWidth="lg">
         {/* --- Top Section --- */}
-        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 6, alignItems: 'center', mb: 8 }}>
-          <Box sx={{ flex: '1 1 50%', width: '100%' }}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: { xs: 4, md: 6 }, alignItems: 'center', mb: { xs: 6, md: 8 } }}>
+          <Box sx={{ flex: '1 1 50%', width: { xs: '100%', md: 'auto' } }}>
             <Box sx={{ borderRadius: '16px', overflow: 'hidden' }}>
-              <img src="https://framerusercontent.com/images/PjaPY2S6qP6ii6fCxTJHhHU66SM.png" alt="Client Reviews" style={{ width: '100%', display: 'block' }} />
+              <img src="https://framerusercontent.com/images/PjaPY2S6qP6ii6fCxTJHhHU66SM.png" alt="Client Reviews" style={{ width: '100%', display: 'block', filter: 'grayscale(100%)' }} />
             </Box>
           </Box>
           <Box sx={{ flex: '1 1 50%' }}>
-            <Chip label="● Reviews" sx={{ bgcolor: 'rgba(255,255,255,0.1)', color: '#fff', mb: 2 }} />
-            <Typography variant="h2" sx={{ fontWeight: 'bold', fontSize: { xs: '3rem', md: '4rem' }, mb: 2 }}>
+            <Chip label="● Reviews" sx={{ bgcolor: 'rgba(255,255,255,0.1)', color: '#fff', mb: { xs: 1, md: 2 } }} />
+            <Typography variant="h2" sx={{ fontWeight: 'bold', fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' }, mb: { xs: 1, md: 2 } }}>
               Client Reviews
             </Typography>
-            <Typography sx={{ fontSize: '1.1rem', opacity: 0.8, maxWidth: '500px', mb: 4 }}>
+            <Typography sx={{ fontSize: { xs: '1rem', md: '1.1rem' }, opacity: 0.8, maxWidth: '500px', mb: { xs: 3, md: 4 } }}>
               Real feedback from clients who trusted my design expertise to elevate their brands successfully.
             </Typography>
-            <Box sx={{ display: 'flex', gap: 2 }}>
-              <Button variant="contained" href="https://wa.me/+919898678754" target="_blank" sx={{ bgcolor: '#fff', color: '#000', '&:hover': { bgcolor: '#eee' }, borderRadius: '99px', px: 3 }}>Book a Free Call</Button>
-              <Button variant="outlined" href="/Services" sx={{ color: '#fff', borderColor: 'rgba(255,255,255,0.5)', '&:hover': { borderColor: '#fff' }, borderRadius: '99px', px: 3 }}>See Services</Button>
+            <Box sx={{ display: 'flex', gap: { xs: 1, md: 2 }, flexDirection: { xs: 'column', sm: 'row' } }}>
+              <Button variant="contained" href="https://wa.me/+919898678754" target="_blank" sx={{ bgcolor: '#fff', color: '#000', '&:hover': { bgcolor: '#eee' }, borderRadius: '99px', px: { xs: 2, md: 3 }, py: { xs: 1, md: 1.5 }, fontSize: { xs: '0.9rem', md: '1.1rem' } }}>Book a Free Call</Button>
+              <Button variant="outlined" href="/Services" sx={{ color: '#fff', borderColor: 'rgba(255,255,255,0.5)', '&:hover': { borderColor: '#fff' }, borderRadius: '99px', px: { xs: 2, md: 3 }, py: { xs: 1, md: 1.5 }, fontSize: { xs: '0.9rem', md: '1.1rem' } }}>See Services</Button>
             </Box>
           </Box>
         </Box>
       </Container>
 
       {/* --- Animated Testimonials Section --- */}
-      <Box sx={{ display: 'flex', animation: `${scrollLeft} 60s linear infinite`, width: 'max-content', mb: 8 }}>
+      <Box sx={{ display: 'flex', animation: `${scrollLeft} 60s linear infinite`, width: 'max-content', mb: { xs: 6, md: 8 } }}>
         {/* We render the list twice for a seamless loop */}
         {[...testimonials, ...testimonials].map((testimonial, index) => (
-          <Box key={index} sx={{ width: '400px', mx: 2 }}>
+          <Box key={index} sx={{ width: { xs: '300px', sm: '350px', md: '400px' }, mx: { xs: 1, md: 2 } }}>
             <TestimonialCard {...testimonial} />
           </Box>
         ))}

@@ -15,10 +15,10 @@ const experience = [
 ];
 
 const ExperienceRow = ({ role, company, period }: { role: string, company: string, period: string }) => (
-    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', py: 1.5 }}>
-        <Typography sx={{ width: '33.3%', opacity: 0.8 }}>{role}</Typography>
-        <Typography sx={{ width: '33.3%', textAlign: 'left' }}>{company}</Typography>
-        <Typography sx={{ width: '33.3%', textAlign: 'right', opacity: 0.5 }}>{period}</Typography>
+    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: 'space-between', alignItems: { xs: 'flex-start', sm: 'center' }, py: 1.5 }}>
+        <Typography sx={{ flex: { xs: '1 1 100%', sm: '1 1 33.3%' }, opacity: 0.8, mb: { xs: 0.5, sm: 0 } }}>{role}</Typography>
+        <Typography sx={{ flex: { xs: '1 1 100%', sm: '1 1 33.3%' }, textAlign: { xs: 'left', sm: 'center' }, mb: { xs: 0.5, sm: 0 } }}>{company}</Typography>
+        <Typography sx={{ flex: { xs: '1 1 100%', sm: '1 1 33.3%' }, textAlign: { xs: 'left', sm: 'right' }, opacity: 0.5 }}>{period}</Typography>
     </Box>
 );
 

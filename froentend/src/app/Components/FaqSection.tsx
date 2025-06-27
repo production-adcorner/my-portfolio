@@ -71,19 +71,19 @@ export default function FaqSection() {
           
           {/* --- Left Column --- */}
           <Box sx={{ flex: '1 1 40%', display: 'flex', flexDirection: 'column' }}>
-            <Chip label="● FAQ'S" sx={{ bgcolor: 'rgba(255,255,255,0.1)', color: '#fff', mb: 2, alignSelf: 'flex-start' }} />
-            <Typography variant="h2" sx={{ fontWeight: 'bold', fontSize: { xs: '3rem', md: '5rem' } }}>
+            <Chip label="● FAQ'S" sx={{ bgcolor: 'rgba(255,255,255,0.1)', color: '#fff', mb: { xs: 1, md: 2 }, alignSelf: 'flex-start' }} />
+            <Typography variant="h2" sx={{ fontWeight: 'bold', fontSize: { xs: '2.5rem', md: '3.5rem', lg: '5rem' } }}>
               Answers
             </Typography>
-            <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.7)', mb: 4, maxWidth: '400px' }}>
+            <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.7)', mb: { xs: 2, md: 4 }, maxWidth: '400px', fontSize: { xs: '0.9rem', md: '1.1rem' } }}>
               Find answers to common questions about my design process, services etc…
             </Typography>
-            <Box sx={{ width: '100%', borderRadius: '16px', overflow: 'hidden', mb: 4 }}>
-              <img src="https://framerusercontent.com/images/QqqmFNIdzb0HbOiMSHvqZXkwT7w.png?scale-down-to=512" alt="FAQ section visual" style={{ width: '100%', display: 'block' }} />
+            <Box sx={{ width: '100%', borderRadius: '16px', overflow: 'hidden', mb: { xs: 2, md: 4 } }}>
+              <img src="https://framerusercontent.com/images/QqqmFNIdzb0HbOiMSHvqZXkwT7w.png?scale-down-to=512" alt="FAQ section visual" style={{ width: '100%', display: 'block', filter: 'grayscale(100%)' }} />
             </Box>
-            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mb: 4 }}>
+            <Box sx={{ display: 'flex', gap: { xs: 0.5, md: 1 }, flexWrap: 'wrap', mb: { xs: 2, md: 4 } }}>
               {tags.map((tag) => (
-                <Chip key={tag} label={tag} variant="outlined" sx={{ color: '#ccc', borderColor: '#555' }} />
+                <Chip key={tag} label={tag} variant="outlined" sx={{ color: '#ccc', borderColor: '#555', fontSize: { xs: '0.75rem', md: '0.875rem' } }} />
               ))}
             </Box>
             <Button
@@ -95,9 +95,9 @@ export default function FaqSection() {
                   color: '#000',
                   '&:hover': { bgcolor: '#eee' },
                   borderRadius: '99px',
-                  px: 3,
-                  py: 1.5,
-                  fontSize: '1.1rem',
+                  px: { xs: 2, md: 3 },
+                  py: { xs: 1, md: 1.5 },
+                  fontSize: { xs: '0.9rem', md: '1.1rem' },
                 }}
               >
                 Book a Free Call
@@ -116,25 +116,25 @@ export default function FaqSection() {
                   backgroundColor: '#1C1C1C',
                   color: 'white',
                   borderRadius: '12px !important',
-                  mb: 1.5,
+                  mb: { xs: 1, md: 1.5 },
                   '&:before': { display: 'none' },
                 }}
               >
                 <AccordionSummary
-                  expandIcon={<AddIcon sx={{ color: 'white' }} />}
+                  expandIcon={<AddIcon sx={{ color: 'white', fontSize: { xs: '1.5rem', md: '2rem' } }} />}
                   aria-controls={`${item.id}-content`}
                   id={`${item.id}-header`}
                   sx={{
-                      py: 1.5,
+                      py: { xs: 1, md: 1.5 },
                       '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
                           transform: 'rotate(45deg)', // Rotates '+' to 'x'
                       },
                   }}
                 >
-                  <Typography variant="h6">{item.question}</Typography>
+                  <Typography variant="h6" sx={{ fontSize: { xs: '1rem', md: '1.25rem' } }}>{item.question}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  <Typography sx={{ color: 'rgba(255,255,255,0.7)', fontSize: { xs: '0.875rem', md: '0.9rem' } }}>
                     {item.answer}
                   </Typography>
                 </AccordionDetails>

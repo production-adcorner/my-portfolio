@@ -56,7 +56,7 @@ export default function FeaturedProjects() {
   return (
     <Box sx={{ backgroundColor: "#000", color: '#fff', py: 8, px: { xs: 2, md: 4 } }}>
       <Box sx={{ maxWidth: '1200px', mx: 'auto', textAlign: 'center' }}>
-        <Typography variant="h2" sx={{ fontWeight: 'bold', mb: 4 }}>
+        <Typography variant="h2" sx={{ fontWeight: 'bold', mb: 4, fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' } }}>
           Featured Projects
         </Typography>
 
@@ -65,7 +65,7 @@ export default function FeaturedProjects() {
           sx={{
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
-            gap: 3,
+            gap: { xs: 2, md: 3 },
             mb: 6,
           }}
         >
@@ -84,7 +84,7 @@ export default function FeaturedProjects() {
           variant="contained"
           href="/projects"
           sx={{
-            py: 1.5, px: 4, borderRadius: '25px', textTransform: 'none', fontSize: '1rem',
+            py: { xs: 1, md: 1.5 }, px: { xs: 3, md: 4 }, borderRadius: '25px', textTransform: 'none', fontSize: { xs: '0.9rem', md: '1rem' },
             backgroundColor: '#fff', color: '#000', '&:hover': { backgroundColor: '#e0e0e0' }
           }}>
             View All Projects

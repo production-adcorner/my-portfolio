@@ -41,7 +41,7 @@ export default function DesignProcess() {
             <Box
               sx={{
                 width: '100%',
-                height: '100vh', 
+                height: { xs: 'auto', md: '100vh' }, // Adjust height for responsiveness
                 borderRadius: '16px',
                 overflow: 'hidden',
               }}
@@ -70,11 +70,11 @@ export default function DesignProcess() {
                 Process
               </Typography>
 
-              <Typography sx={{ fontSize: '1.1rem', opacity: 0.8, maxWidth: '600px', mb: 2 }}>
+              <Typography sx={{ fontSize: { xs: '1rem', md: '1.1rem' }, opacity: 0.8, maxWidth: '600px', mb: 2 }}>
                 crafting bold visuals that inspire and elevate brands with thought process.
               </Typography>
 
-              <Box sx={{ display: 'flex', gap: 2, mb: 4 }}>
+              <Box sx={{ display: 'flex', gap: { xs: 1, md: 2 }, mb: 4, flexDirection: { xs: 'column', sm: 'row' } }}>
                 <Button
               variant="contained"
               href="https://wa.me/+919898678754"
@@ -84,9 +84,9 @@ export default function DesignProcess() {
                 color: '#000',
                 '&:hover': { bgcolor: '#eee' },
                 borderRadius: '99px',
-                px: 3,
-                py: 1.5,
-                fontSize: '1.1rem',
+                px: { xs: 2, md: 3 },
+                py: { xs: 1, md: 1.5 },
+                fontSize: { xs: '0.9rem', md: '1.1rem' },
               }}
             >
               Book a Free Call
@@ -99,9 +99,9 @@ export default function DesignProcess() {
                 borderColor: 'rgba(255,255,255,0.5)',
                 '&:hover': { borderColor: '#fff' },
                 borderRadius: '99px',
-                px: 3,
-                py: 1.5,
-                fontSize: '1.1rem',
+                px: { xs: 2, md: 3 },
+                py: { xs: 1, md: 1.5 },
+                fontSize: { xs: '0.9rem', md: '1.1rem' },
               }}
             >
               See Projects

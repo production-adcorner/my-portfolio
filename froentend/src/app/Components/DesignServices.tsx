@@ -56,37 +56,36 @@ export default function DesignServices() {
     <Box sx={{ backgroundColor: '#000', color: '#fff', py: { xs: 8, md: 12 }, overflow: 'hidden' }}>
       <Container maxWidth="lg">
         {/* --- Top Section with FLEXBOX --- */}
-        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 6, alignItems: 'center', mb: { xs: 6, md: 10 } }}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: { xs: 4, md: 6 }, alignItems: 'center', mb: { xs: 6, md: 10 } }}>
           <Box sx={{ flex: '1 1 50%' }}>
-            {/* ... (content is the same: Chip, Typography, Buttons) ... */}
-            <Chip label="Design services" sx={{ bgcolor: 'rgba(255,255,255,0.1)', color: '#fff', mb: 3 }} />
-            <Typography variant="h2" sx={{ fontWeight: 'bold', fontSize: { xs: '3rem', md: '4rem' }, mb: 2 }}>Services</Typography>
-            <Typography sx={{ fontSize: '1.1rem', opacity: 0.8, maxWidth: '500px', mb: 4 }}>Helping businesses standout with brand identity packaging that captivates and converts effectively.</Typography>
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, mb: 4 }}>
-              {topSkills.map(skill => ( <Chip key={skill} label={skill} sx={{ bgcolor: 'rgba(255,255,255,0.1)', color: '#fff' }} />))}
+            <Chip label="Design services" sx={{ bgcolor: 'rgba(255,255,255,0.1)', color: '#fff', mb: { xs: 2, md: 3 } }} />
+            <Typography variant="h2" sx={{ fontWeight: 'bold', fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' }, mb: { xs: 1, md: 2 } }}>Services</Typography>
+            <Typography sx={{ fontSize: { xs: '1rem', md: '1.1rem' }, opacity: 0.8, maxWidth: '500px', mb: { xs: 3, md: 4 } }}>Helping businesses standout with brand identity packaging that captivates and converts effectively.</Typography>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: { xs: 1, md: 1.5 }, mb: { xs: 3, md: 4 } }}>
+              {topSkills.map(skill => ( <Chip key={skill} label={skill} sx={{ bgcolor: 'rgba(255,255,255,0.1)', color: '#fff', fontSize: { xs: '0.8rem', md: '0.9rem' } }} />))}
             </Box>
-            <Box sx={{ display: 'flex', gap: 2 }}>
-              <Button variant="contained" href="https://wa.me/+919898678754" target="_blank" sx={{ bgcolor: '#fff', color: '#000', '&:hover': { bgcolor: '#eee' }, borderRadius: '99px', px: 3 }}>Book a Free Call</Button>
-              <Button variant="outlined" href="/Projects" sx={{ color: '#fff', borderColor: 'rgba(255,255,255,0.5)', '&:hover': { borderColor: '#fff' }, borderRadius: '99px', px: 3 }}>See Projects</Button>
+            <Box sx={{ display: 'flex', gap: { xs: 1, md: 2 }, flexDirection: { xs: 'column', sm: 'row' } }}>
+              <Button variant="contained" href="https://wa.me/+919898678754" target="_blank" sx={{ bgcolor: '#fff', color: '#000', '&:hover': { bgcolor: '#eee' }, borderRadius: '99px', px: { xs: 2, md: 3 }, py: { xs: 1, md: 1.5 }, fontSize: { xs: '0.9rem', md: '1.1rem' } }}>Book a Free Call</Button>
+              <Button variant="outlined" href="/Projects" sx={{ color: '#fff', borderColor: 'rgba(255,255,255,0.5)', '&:hover': { borderColor: '#fff' }, borderRadius: '99px', px: { xs: 2, md: 3 }, py: { xs: 1, md: 1.5 }, fontSize: { xs: '0.9rem', md: '1.1rem' } }}>See Projects</Button>
             </Box>
           </Box>
-          <Box sx={{ flex: '1 1 50%', width: '100%' }}>
+          <Box sx={{ flex: '1 1 50%', width: { xs: '100%', md: 'auto' } }}>
             <Box sx={{ borderRadius: '16px', overflow: 'hidden' }}>
-              <img src="https://framerusercontent.com/images/p6Im6dfknHAI0ig4NqDcO4WNpc.jpg?scale-down-to=1024" alt="Services" style={{ width: '100%', display: 'block' }} />
+              <img src="https://framerusercontent.com/images/p6Im6dfknHAI0ig4NqDcO4WNpc.jpg?scale-down-to=1024" alt="Services" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%)' }} />
             </Box>
           </Box>
         </Box>
 
         {/* --- Middle Section with FLEXBOX --- */}
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', mx: -1.5, mb: { xs: 8, md: 12 } }}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', mx: { xs: 0, sm: -1.5 }, mb: { xs: 8, md: 12 } }}>
           {services.map(service => (
-            <Box key={service.title} sx={{ flex: '1 1 50%', p: 1.5, boxSizing: 'border-box', minWidth: { xs: '100%', sm: '50%' } }}>
-              <Box sx={{ p: 3, backgroundColor: '#1C1C1C', borderRadius: '12px', height: '100%' }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1.5, color: 'rgba(255,255,255,0.7)' }}>
+            <Box key={service.title} sx={{ flex: '1 1 50%', p: { xs: 0, sm: 1.5 }, boxSizing: 'border-box', minWidth: { xs: '100%', sm: '50%' }, mb: { xs: 2, sm: 0 } }}>
+              <Box sx={{ p: { xs: 2, md: 3 }, backgroundColor: '#1C1C1C', borderRadius: '12px', height: '100%' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, md: 1.5 }, mb: { xs: 1, md: 1.5 }, color: 'rgba(255,255,255,0.7)' }}>
                   {service.icon}
-                  <Typography variant="h6" sx={{ fontWeight: 600 }}>{service.title}</Typography>
+                  <Typography variant="h6" sx={{ fontWeight: 600, fontSize: { xs: '1rem', md: '1.25rem' } }}>{service.title}</Typography>
                 </Box>
-                <Typography sx={{ fontSize: '0.9rem', opacity: 0.7 }}>{service.description}</Typography>
+                <Typography sx={{ fontSize: { xs: '0.875rem', md: '0.9rem' }, opacity: 0.7 }}>{service.description}</Typography>
               </Box>
             </Box>
           ))}
@@ -95,7 +94,7 @@ export default function DesignServices() {
       </Container>
       
       {/* --- Bottom Section (Marquee) --- */}
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, md: 2 } }}>
         <MarqueeRow skills={marqueeSkills1} direction="left" />
         <MarqueeRow skills={marqueeSkills2} direction="right" />
       </Box>

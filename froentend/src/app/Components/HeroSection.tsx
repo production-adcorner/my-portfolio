@@ -42,7 +42,7 @@ export default function HeroSection() {
         Elevate your brand with custom identity and package design. Showcase your story through bold visuals and strategic design solutions.
       </Typography>
 
-      <Box sx={{ display: 'flex', gap: 2 }}>
+      <Box sx={{ display: 'flex', gap: 2, flexDirection: { xs: 'column', sm: 'row' } }}>
         <Button
                 variant="contained"
                 href="https://wa.me/+919898678754"

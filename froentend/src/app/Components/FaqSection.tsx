@@ -86,9 +86,22 @@ export default function FaqSection() {
                 <Chip key={tag} label={tag} variant="outlined" sx={{ color: '#ccc', borderColor: '#555' }} />
               ))}
             </Box>
-            <Button variant="outlined" sx={{ mt: 'auto', color: '#fff', borderColor: 'rgba(255,255,255,0.5)', '&:hover': { borderColor: '#fff' }, borderRadius: '99px', px: 3, alignSelf: 'flex-start' }}>
-              Book a Free Call
-            </Button>
+            <Button
+                variant="contained"
+                href="https://wa.me/+919898678754"
+                target="_blank"
+                sx={{
+                  bgcolor: '#fff',
+                  color: '#000',
+                  '&:hover': { bgcolor: '#eee' },
+                  borderRadius: '99px',
+                  px: 3,
+                  py: 1.5,
+                  fontSize: '1.1rem',
+                }}
+              >
+                Book a Free Call
+              </Button>
           </Box>
 
           {/* --- Right Column (Accordion) --- */}

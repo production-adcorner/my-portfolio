@@ -64,8 +64,8 @@ export default function ClientReviews() {
               Real feedback from clients who trusted my design expertise to elevate their brands successfully.
             </Typography>
             <Box sx={{ display: 'flex', gap: 2 }}>
-              <Button variant="contained" sx={{ bgcolor: '#fff', color: '#000', '&:hover': { bgcolor: '#eee' }, borderRadius: '99px', px: 3 }}>Book a Free Call</Button>
-              <Button variant="outlined" sx={{ color: '#fff', borderColor: 'rgba(255,255,255,0.5)', '&:hover': { borderColor: '#fff' }, borderRadius: '99px', px: 3 }}>See Services</Button>
+              <Button variant="contained" href="https://wa.me/+919898678754" target="_blank" sx={{ bgcolor: '#fff', color: '#000', '&:hover': { bgcolor: '#eee' }, borderRadius: '99px', px: 3 }}>Book a Free Call</Button>
+              <Button variant="outlined" href="/Services" sx={{ color: '#fff', borderColor: 'rgba(255,255,255,0.5)', '&:hover': { borderColor: '#fff' }, borderRadius: '99px', px: 3 }}>See Services</Button>
             </Box>
           </Box>
         </Box>

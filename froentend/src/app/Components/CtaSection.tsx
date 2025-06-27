@@ -71,21 +71,21 @@ export default function CtaSection() {
         </Typography>
 
         <Button
-          variant="contained"
-          sx={{
-            bgcolor: '#fff',
-            color: '#000',
-            '&:hover': { bgcolor: '#eee' },
-            borderRadius: '99px',
-            px: 4,
-            py: 1.5,
-            mb: 4,
-            textTransform: 'none',
-            fontSize: '1rem',
-          }}
-        >
-          Book a Free Call
-        </Button>
+              variant="contained"
+              href="https://wa.me/+919898678754"
+              target="_blank"
+              sx={{
+                bgcolor: '#fff',
+                color: '#000',
+                '&:hover': { bgcolor: '#eee' },
+                borderRadius: '99px',
+                px: 3,
+                py: 1.5,
+                fontSize: '1.1rem',
+              }}
+            >
+              Book a Free Call
+            </Button>
 
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 8 }}>
           <IconButton href="#" icon={<DesignServicesIcon />} />
@@ -111,8 +111,8 @@ export default function CtaSection() {
           zIndex: 1,
         }}
       >
-        <Typography variant="body2">hello@framebase.design</Typography>
-        <Typography variant="body2">Design In Framer</Typography>
+        <Typography variant="body2">Peoduction.adcorner@gmail.com</Typography>
+        <Typography variant="body2">Made By Mukund Hirpara</Typography>
         <Typography variant="body2">All rights reserved, ©{currentYear}</Typography>
       </Box>
     </Box>

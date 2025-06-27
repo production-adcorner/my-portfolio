@@ -4,7 +4,7 @@ import { Box, Typography, Paper } from '@mui/material';
 // A small component for each individual metric
 const MetricItem = ({ value, label }: { value: string; label: string }) => (
   <Box sx={{ textAlign: 'center' }}>
-    <Typography variant="h3" component="p" sx={{ fontWeight: 'bold' }}>
+    <Typography variant="h3" component="p" sx={{ fontWeight: 'bold', color: '#fff' }}>
       {value}
     </Typography>
     <Typography variant="body2" sx={{ color: '#aaa' }}>

@@ -43,18 +43,37 @@ export default function HeroSection() {
       </Typography>
 
       <Box sx={{ display: 'flex', gap: 2 }}>
-        <Button variant="contained" sx={{
-          py: 1.5, px: 4, borderRadius: '25px', textTransform: 'none', fontSize: '1rem',
-          backgroundColor: '#fff', color: '#000', '&:hover': { backgroundColor: '#e0e0e0' }
-        }}>
-          Get Started Now
-        </Button>
-        <Button variant="outlined" sx={{
-          py: 1.5, px: 4, borderRadius: '25px', textTransform: 'none', fontSize: '1rem',
-          color: 'white', borderColor: 'rgba(255, 255, 255, 0.5)', '&:hover': { borderColor: '#fff' }
-        }}>
-          See Projects
-        </Button>
+        <Button
+                variant="contained"
+                href="https://wa.me/+919898678754"
+                target="_blank"
+                sx={{
+                  bgcolor: '#fff',
+                  color: '#000',
+                  '&:hover': { bgcolor: '#eee' },
+                  borderRadius: '99px',
+                  px: 3,
+                  py: 1.5,
+                  fontSize: '1.1rem',
+                }}
+              >
+                Get Started Now
+              </Button>
+        <Button
+                variant="outlined"
+                href="/Projects"
+                sx={{
+                  color: '#fff',
+                  borderColor: 'rgba(255,255,255,0.5)',
+                  '&:hover': { borderColor: '#fff' },
+                  borderRadius: '99px',
+                  px: 3,
+                  py: 1.5,
+                  fontSize: '1.1rem',
+                }}
+              >
+                See Projects
+              </Button>
       </Box>
     </Box>
   );

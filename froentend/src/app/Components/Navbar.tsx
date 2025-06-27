@@ -22,7 +22,7 @@ export default function Navbar() {
           <Button
             color="inherit"
             className={`text-grey-300 hover:text-white ${pathname === '/services' ? 'font-bold' : ''}`}
-            href="/#design-services"
+            href="/Services"
             sx={{
               fontSize: '0.9rem',
               textTransform: 'none',
@@ -38,7 +38,7 @@ export default function Navbar() {
           <Button
             color="inherit"
             className={`text-grey-300 hover:text-white ${pathname === '/projects' ? 'font-bold' : ''}`}
-            href="/#featured-projects"
+            href="/Projects"
             sx={{
               fontSize: '0.9rem',
               textTransform: 'none',
@@ -54,6 +54,7 @@ export default function Navbar() {
           <Button
             color="inherit"
             className={`text-grey-300 hover:text-white ${pathname === '/vision' ? 'font-bold' : ''}`}
+            href="/Vision"
             sx={{
               fontSize: '0.9rem',
               textTransform: 'none',
@@ -69,6 +70,7 @@ export default function Navbar() {
           <Button
             color="inherit"
             className={`text-grey-300 hover:text-white ${pathname === '/mission' ? 'font-bold' : ''}`}
+            href="/Mission"
             sx={{
               fontSize: '0.9rem',
               textTransform: 'none',
@@ -84,7 +86,9 @@ export default function Navbar() {
           <Button
             color="inherit"
             className={`text-grey-300 hover:text-white ${pathname === '/contact' ? 'font-bold' : ''}`}
-          
+            href="https://wa.me/+919898678754"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
               fontSize: '0.9rem',
               textTransform: 'none',

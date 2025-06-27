@@ -11,6 +11,7 @@ export default function HeroSection() {
         alignItems: 'center',
         textAlign: 'center',
         px: 2,
+    
       }}
     >
       <Chip label="Crafting Unique Brand Identities" sx={{

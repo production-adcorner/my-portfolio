@@ -1,9 +1,9 @@
 'use client';
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Button, Box, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, Toolbar, Button, Box, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText, useMediaQuery, useTheme, Link } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { usePathname } from 'next/navigation';
-import StarIcon from './star';
+
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -38,8 +38,9 @@ export default function Navbar() {
   );
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#000' }}>
+    <AppBar position="sticky" sx={{ backgroundColor: '#000' }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: { xs: '0 16px', md: '0 24px' } }}>
+        <Link href="/">
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <img
             src="https://res.cloudinary.com/doq2xoame/image/upload/v1751259251/kv5esmq18dylaruwjyrk.png"
@@ -47,6 +48,7 @@ export default function Navbar() {
             style={{ height: 40, width: 'auto', objectFit: 'contain' }}
           />
         </Box>
+        </Link>
         {isMobile ? (
           <IconButton
             color="inherit"

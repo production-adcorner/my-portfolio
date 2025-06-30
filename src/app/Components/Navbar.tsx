@@ -42,7 +42,7 @@ export default function Navbar() {
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: { xs: '0 16px', md: '0 24px' } }}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <img
-            src="/logo.png"
+            src="https://res.cloudinary.com/doq2xoame/image/upload/v1751259251/kv5esmq18dylaruwjyrk.png"
             alt="Portfolite Logo"
             style={{ height: 40, width: 'auto', objectFit: 'contain' }}
           />
